@@ -8,6 +8,7 @@ p {
     float: left;
     border-radius: 10px;
     margin-left: 15px;
+    background-color: rgb(190, 255, 255);
 }
 
 .wordBtn {
@@ -25,15 +26,3 @@ p {
     text-align: center;
     margin-left: 10px;
 }
-
-/* 
-button {
-    border-radius: 10px;
-    border: solid 1px #008eb9;
-    height: 50px;
-    background-color: rgb(177, 253, 253);
-}
-
-button:hover {
-    background-color: rgb(125, 173, 173);
-} */
