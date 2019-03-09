@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    padding: 10px;
+    border: solid 1px #000000;
+    float: left;
+    border-radius: 10px;
+    margin-left: 15px;
+}
+
+.wordBtn {
+    /* padding: 10px; */
+}
+
+
+.closeBtn {
+    width: 30px;
+    height: 100%;
+    border-left: solid 1px #000000;
+    float: right;
+    border-radius: 0px 10px 10px 0px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-left: 10px;
+}
+
+/* 
+button {
+    border-radius: 10px;
+    border: solid 1px #008eb9;
+    height: 50px;
+    background-color: rgb(177, 253, 253);
+}
+
+button:hover {
+    background-color: rgb(125, 173, 173);
+} */
