@@ -1,44 +1,5 @@
 // // javascript
 
-// localStorage.setItem('name', 'Emerson');
-// $('.name').html(localStorage.getItem('name'));
-
-
-//array list of the animals
-var listOfAnimals = [];
-//list of favorites
-var favoritesArr = [];
-// var storedAnimals;
-
-// function favoritesFn() {
-//     favorites.push('horse');
-
-//     localStorage.setItem('favoriteAnimals', JSON.stringify(favorites));
-
-//     storedAnimals = JSON.parse(localStorage.getItem('favoriteAnimals'));
-
-//     populateFavorites();
-// }
-
-
-// function populateFavorites(){
-//     for (var i in storedAnimals) {
-//        // addButtonFavorite(storedAnimals[i]);
-//     }
-// }
-// populateFavorites();
-
-// var names = ['john', 'lucy', 'mark'];
-
-// localStorage.setItem("names", JSON.stringify(names));
-
-// //...
-// var storedNames = JSON.parse(localStorage.getItem("names"));
-
-// console.log(storedNames[0]);
-
-
-
 //background changing
 function setColor(color) {
 
@@ -71,38 +32,64 @@ function greenBtn() {
 }
 
 
-function favoritesFn(favName) {
-    if (favoritesArr.includes(favName.id)) {
-        ;
-    } else {
-        favoritesArr.push(favName.id);
-    }
-}
-
+//array list of the animals
+var listOfAnimals = [];
 
 function addButton(btnName) {
     var newBtn = $('<p id="' + btnName + '">');
-    newBtn.append('<span class="wordBtn" onclick="generateGifs()">' + btnName + '</span>');
-    newBtn.append('<span alt="Add to Favorites" onclick="favoritesFn(' + btnName + ')" class="closeBtn closingBtn">√</span>');
+    newBtn.append('<span class="wordBtn" onclick="generateGifs(' + btnName + ')">' + btnName + '</span>');
     $("#buttonsPlace").append(newBtn);
 }
 
 //generate gifs
-function generateGifs() {
-    console.log("Cloe");
-}
+function generateGifs(animalGen) {
 
+    var animal = animalGen.id;
+
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+        animal + "&api_key=dc6zaTOxFJmzC&limit=10";
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function (response) {
+        var results = response.data;
+
+        // Looping over every result item
+        for (var i = 0; i < results.length; i++) {
+
+            // No surprises 0nly taking action if the photo has an appropriate rating
+            if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
+                var imageHolder = $("<div>");
+
+                var rating = results[i].rating;
+
+                var p = $("<p>").text("Rating: " + rating);
+
+                var animalImage = $("<img>");
+
+                animalImage.attr("src", results[i].images.fixed_height.url);
+
+                imageHolder.append(p);
+                imageHolder.append(animalImage);
+
+                $("#animalImages").prepend(imageHolder);
+            }
+        }
+    });
+
+}
 
 $('#submitBtn').on("click", function (event) {
     event.preventDefault();
 
     var animalName = $('#animal').val().trim();
     if (!(animalName === "")) {
-        if(listOfAnimals.includes(animalName)){
+        if (listOfAnimals.includes(animalName)) {
             ;
         } else {
             listOfAnimals.push(animalName);
-            console.log(listOfAnimals);
+
             //call function to add
             addButton(animalName);
         }
