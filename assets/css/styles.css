@@ -2,6 +2,35 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+h2 {
+    font-size: 16px;
+}
+article {
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.562);
+    border-radius: 20px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 20px;
+}
+
+section {
+    background-color: rgba(255, 255, 255, 0.493);
+    border-radius: 20px;
+    padding: 20px;
+    grid-column: 1/9;
+   
+}
+aside {
+    border-radius: 20px;
+    padding: 20px;
+    grid-column: 9/13;
+    background-color: rgba(109, 156, 156, 0.315);
+}
+
+
 p {
     padding: 10px;
     border: solid 1px #000000;
@@ -11,10 +40,24 @@ p {
     background-color: rgb(190, 255, 255);
 }
 
-.wordBtn {
-    /* padding: 10px; */
+p:hover {
+    background-color: rgb(104, 235, 235);
 }
 
+#buttonsPlace {
+    clear: both;
+    margin-top: 20px;
+    border-top: solid 2px #333333;
+    height: auto;
+    padding-bottom: 20px;
+}
+
+#buttonsFavorites {
+    clear: both;
+    margin-top: 20px;
+    border-top: solid 2px #333333;
+    height: auto;
+}
 
 .closeBtn {
     width: 30px;
@@ -25,4 +68,9 @@ p {
     box-sizing: border-box;
     text-align: center;
     margin-left: 10px;
+}
+
+.bgBtn {
+    float: left;
+    margin-right: 10px;
 }

@@ -17,31 +17,44 @@
 
 <body>
 
-    <!-- <p>
-        <span class="wordBtn">press me</span>
-        <span id="" class="closeBtn closingBtn">X</span>
-    </p>
 
-    <p>
-        <span class="wordBtn">press me</span>
-        <span id="" class="closeBtn closingBtn">X</span>
-    </p> -->
+    <article>
+        <section>
 
-    <div id="buttonsPlace">
-
-    </div>
-    
+            <h1>Add an animal button and click on it</h1>
+            <h2>You can start and pause the animation when clicking on an image</h2>
+            <div class="bgBtn"><b>Page Color:</b></div>
+            <div class="bgBtn" id="red" onclick="redBtn()">Red</div>
+            <div class="bgBtn" id="blue" onclick="blueBtn()">Blue</div>
+            <div class="bgBtn" id="yellow" onclick="yellowBtn()">Yellow</div>
+            <div class="bgBtn" id="pink" onclick="pinkBtn()">Pink</div>
+            <div class="bgBtn" id="green" onclick="greenBtn()">Green</div>
 
 
-    <form id="animalForm">
-        <div class="animal">
-            <label for="userNameInput">Add an Animal</label>
-            <input onfocus="this.value=''" type="text" class="" id="animal" placeholder="ex. Zebra">
-        </div>
+            <div id="buttonsPlace">
 
-        <input id="submitBtn" type="submit" value="Submit">
+            </div>
 
-    </form>
+            <!-- FAVORITES -->
+            <div id="buttonsFavorites">
+                <h1>Favorites</h1>
+            </div>
+
+        </section>
+        <aside>
+            <form id="animalForm">
+                <div class="animal">
+                    <label for="userNameInput">Add an Animal</label>
+                    <input onfocus="this.value=''" type="text" class="" id="animal" placeholder="ex. Zebra">
+                </div>
+
+                <input id="submitBtn" type="submit" value="Submit">
+
+            </form>
+
+
+        </aside>
+    </article>
 
 
 
