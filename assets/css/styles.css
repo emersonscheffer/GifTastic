@@ -53,6 +53,7 @@ p:hover {
 }
 
 #animalImages {
+    padding: 20px;
     clear: both;
     margin-top: 20px;
     border-top: solid 2px #333333;
